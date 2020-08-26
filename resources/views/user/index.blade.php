@@ -18,23 +18,30 @@
   </head>
   <body class = 'bg-light'>
     <header>
-      <div class="container">
-        <nav class="navbar navbar-expand-sm navbar-light">
-          <a href="" class="navbar-brand">Logo</a>
+    <div class="d-flex justify-content-between">
+    <ul class="navbar-nav ml-5">
+      <div class="container ml-0 mr-0 text-light ">
+        <nav class="navbar navbar-expand-sm navbar-light ">
+          <a href="" class="navbar-brand ">
+          <img src="image/logo3.jpg" >
+          </a>
           <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div id="menu" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
+          </ul>
+            <ul class="navbar-nav mt-5 mr-5 ">
               @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links ">
                     @auth
-                        <a href="{{ url('/home') }}">マイページ</a>
+                        <a href="{{ url('/show') }}" class="text-secondary ">マイページ</a>
                     @else
-                        <a href="{{ route('login') }}"class="text-secondary">ログイン</a>
+                        <a href="{{ route('login') }}"class="text-secondary ">ログイン</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}"class="text-secondary">新規登録</a>
+                            <a href="{{ route('register') }}"class="text-secondary ">新規登録</a>
+
+                            
                         @endif
                     @endauth
                 </div>
@@ -42,6 +49,7 @@
             </ul>
           </div>
         </nav>
+        </div>
       </div>
 
       <div class="cover text-white text-center py-5">

@@ -25,3 +25,8 @@ Route::get('/home/message', 'MessageController@index')->name("message-page");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/show', 'UserController@show')->name('my-page');
+
+
+;

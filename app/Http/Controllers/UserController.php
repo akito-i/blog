@@ -11,4 +11,11 @@ class UserController extends Controller
     {
       return view("user.index");
     }
+
+    public function show()
+    {
+      return view("user.show");
+    }
+
+
 }
