@@ -29,11 +29,12 @@ class PostController extends Controller
      */
     public function create(Request $request) : JsonResponse
     {
-        $posts = new Post;
-        $posts->title = $request->title;
-        $posts->description = $request->description;
-        $posts->save();
-        //pusherの処理
-       event(new PusherEvent($posts));
+        $post = new Post($request->all());
+        $post->save();
+        
+        event(new Posted($post));
+
+
+        return response()->json(['message' => '投稿しました。']);
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use App\Models\Post;
-use App\Models\User;
+// use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -12,7 +12,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class posted
+class posted implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -26,7 +26,7 @@ class posted
 
     public function __construct(Post $posts)
     {
-        $this->posts = $posts;
+        $this->post = $posts;
         
     }
 

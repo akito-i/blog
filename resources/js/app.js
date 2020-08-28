@@ -48,8 +48,8 @@ $(document).ready(function() {
         });
         return false;
     });
-    window.Echo.channel('post')
-        .listen('Posted', (e) => {
+    window.Echo.channel('posts')
+        .listen('Posted', (date) => {
             $("#board").append('<li>' + e.post.text + '</li>');
         });
 });

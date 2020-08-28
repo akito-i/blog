@@ -55811,6 +55811,27 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$(document).ready(function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  $("#submit").click(function () {
+    var url = "/posts/create";
+    $.ajax({
+      url: url,
+      data: {
+        text: $("#text").val()
+      },
+      method: "POST"
+    });
+    return false;
+  });
+  window.Echo.channel('posts').listen('Posted', function (date) {
+    $("#board").append('<li>' + e.post.text + '</li>');
+  });
+});
 
 /***/ }),
 
@@ -55856,9 +55877,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "41af72ac110851cc1c56",
+  key: "af13e96b975f84add308",
   cluster: "ap3",
-  forceTLS: true
+  encrypted: true
 });
 
 /***/ }),
