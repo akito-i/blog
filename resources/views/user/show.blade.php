@@ -9,27 +9,31 @@
 <table class="table table-striped">  
 <tr>
 <th>氏名</th>
-<td>{{ Auth::user()->name }}</td>
+<td>{{ $auth->name }}</td>
 </tr>  
 <th>年齢</th>
-<td>{{ Auth::user()->age }}</td>
+<td>{{ $auth->age }}</td>
 </tr>  
 <tr>
 <th>メールアドレス</th>
-<td>{{ Auth::user()->email }}</td>
+<td>{{ $auth->email }}</td>
 </tr>  
 <tr>
 <th>住所（都道府県）</th>
-<td>{{ Auth::user()->place }}</td>
+<td>{{ $auth->place }}</td>
 </tr>
 <tr>
 <th>言語</th>
-<td>{{ Auth::user()->language }}</td>
+<td>{{ $auth->language }}</td>
 </tr>
 <th>プロフィール</th>
-<td>{{ Auth::user()->profile }}</td>
+<td>{{ $auth->profile }}</td>
 </tr>
 </table>
+
+</div>
+              <a href="{{ action('UserController@edit') }}"><button class="user-btn">ユーザー登録内容の編集</button></a>
+        </div>
  
 </div>
 @endsection

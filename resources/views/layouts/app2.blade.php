@@ -27,6 +27,19 @@
                 <img src="image/logo3.jpg" >
                 </a>
                 
+                
+                <div class="input-group w-25">
+                
+  <input type="text" class="form-control" placeholder="言語で検索">
+  
+   
+
+  <div class="input-group-append">
+  
+   </div>
+</div>
+<i class="fa fa-search ml-2"></i>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

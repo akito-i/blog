@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'UserController@index')->name("top-page");
-Route::get('/home/message', 'MessageController@index')->name("message-page");
 
 Auth::routes();
 
@@ -28,5 +27,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/show', 'UserController@show')->name('my-page');
 
+Route::get('/edit', 'UserController@edit')->name('edit-page');
 
+Route::post('/edit', 'UserController@edit')->name('edit-page');
+
+Route::get('/showList', 'UserController@showList')->name('edit-page');
+
+Route::post('/update', 'UserController@update');
+
+Route::get("/posts", 'PostController@index')->name('post.index');
+Route::post("/posts/create", 'PostController@create')->name('post.create');
 ;
