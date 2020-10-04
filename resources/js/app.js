@@ -52,4 +52,6 @@ $(document).ready(function() {
         .listen('Posted', (date) => {
             $("#board").append('<li>' + e.post.text + '</li>');
         });
+        
 });
+

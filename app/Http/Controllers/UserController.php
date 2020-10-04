@@ -12,26 +12,28 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    //トップ画面を表示する
     public function index()
     {
-      return view("user.index");
+      $auth = Auth::user();
+     
+
+      return view("user.index",['auth'=>$auth]);
     }
 
-    public function show()
-
+    public function show($id)
     {
+      $auth = Auth::user();
+   $user = User::find($id);
    
-   $auth = Auth::user();
    
-   return view('user.show',[ 'auth' => $auth ]);
+   return view('user.show',[ 'user' => $user ],['auth'=>$auth]);
    
     }
 
     public function showList()
 
     {
-   
+  
    $users = User::all();
    
    return view('user.list',[ 'users' => $users]);

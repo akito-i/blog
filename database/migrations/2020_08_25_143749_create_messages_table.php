@@ -12,16 +12,13 @@ class CreateMessagesTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('messages', function (Blueprint $table) {
-            $table->id();
-            $table->string('text');
-            $table->string('image');
-            
-
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('messages', function (Blueprint $table) {
+        $table->increments('id');
+        $table->text('body'); // メッセージ本文
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

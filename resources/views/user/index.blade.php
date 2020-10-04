@@ -34,7 +34,9 @@
               @if (Route::has('login'))
                 <div class="top-right links ">
                     @auth
-                        <a href="{{ url('/show') }}" class="text-secondary ">マイページ</a>
+                        <a href="/show/{{$auth->id}}" class="text-secondary ">マイページ</a>
+
+                        <a href="/showList" class="text-secondary ml-1 ">エンジニア一覧</a>
                     @else
                         <a href="{{ route('login') }}"class="text-secondary ">ログイン</a>
 
@@ -54,7 +56,8 @@
 
       <div class="cover text-white text-center py-5">
         <h1 class="display-4 mb-4">Enginear</h1>
-        <a href="" class="btn btn-primary btn-lg">ログイン（test）</a>
+
+        <a href="{{ route('login') }}" class="btn btn-primary btn-lg">ログイン<br>（test_adress:<span class="text-danger">aaa@gmail.com</span>）<br>(test_pass:<span class="text-danger">11111111</span>)</a>
       </div>
     </header>
     <main>
