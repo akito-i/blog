@@ -45,7 +45,7 @@ Route::get('chat/{id}', 'ChatController@index');
 // Route::post('/chat/send' , 'ChatController@store')->name('chatSend');
 
 
-
+Route::get('Search','SearchController@index')->name('search');
 
 
 

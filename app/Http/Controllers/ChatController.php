@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Message;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,7 @@ class ChatController extends Controller
 
     public function index($id)
     {
-
+        $user = User::find($id);
         $auth = Auth::user($id);
         return view('chat',['auth'=>$auth]);
     }

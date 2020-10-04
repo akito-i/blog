@@ -12,7 +12,7 @@
     <body class = 'bg-light'>
     <div id="your_container">
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <div class= "font-weight-bold">＜  </div>
+    <div class= "font-weight-bold">＜ {{$auth->name}}  </div>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>
           </button>

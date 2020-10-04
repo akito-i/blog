@@ -36,7 +36,7 @@
                     @auth
                         <a href="/show/{{$auth->id}}" class="text-secondary ">マイページ</a>
 
-                        <a href="/showList" class="text-secondary ml-1 ">エンジニア一覧</a>
+                        <a href="/home" class="text-secondary ml-1 ">エンジニア一覧</a>
                     @else
                         <a href="{{ route('login') }}"class="text-secondary ">ログイン</a>
 
