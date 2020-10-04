@@ -29,7 +29,7 @@
         <div v-for="m in messages">
 
             <!-- 登録された日時 -->
-            <span></span>：&nbsp;
+            <span>{{$auth->name}}</span>：&nbsp;
 
             <!-- メッセージ内容 -->
             <span v-text="m.body"></span>
@@ -69,7 +69,7 @@
                     const url = '/ajax/chat';
                     axios.get(url)
                         .then((response) => {
-
+                            
                             this.messages = response.data;
 
                         });

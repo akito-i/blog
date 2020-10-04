@@ -14,9 +14,11 @@ class ChatController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($id)
     {
-        return view('chat');
+
+        $auth = Auth::user($id);
+        return view('chat',['auth'=>$auth]);
     }
 
     public function fetchMessages()
